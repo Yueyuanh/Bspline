@@ -1,15 +1,6 @@
 # BSpline 三次B样条曲线
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
+
+
 ## B样条
 
 $$
@@ -213,7 +204,7 @@ C_{N-1} \\
 C_{N} \\
 \end{bmatrix}
 $$
-太复杂了，不想手算了 :(
+太懒了，不想手算了 :(
 
 <img src="DOC/matlab_Cn.png" style="zoom: 50%;" />
 
@@ -258,3 +249,7 @@ $$
 所以，起始点的速度$V$不同（方向和大小），最后生成的B样条也不同，最终方向取决于实际需求
 
 <img src="DOC/Bspline_animation.gif" style="zoom:30%;" />
+
+# Source Code
+
+![](DOC/qrcode_github.com.png)
