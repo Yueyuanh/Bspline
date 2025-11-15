@@ -1,4 +1,4 @@
-function BsplineSE_ATH(C,Aths,Athe,L,Tel)
+function P=BsplineSE_ATH(C,Aths,Athe,L,Tel)
     % C  增广控制点
     % Co 原控制点
 
@@ -28,9 +28,11 @@ function BsplineSE_ATH(C,Aths,Athe,L,Tel)
     f3s=(-3*s.^3+3*s.^2+3*s+1)/6;
     f4s=s.^3/6;
 
-    n=length(Cn)-4;
-    Ps=zeros((n+1)*2,2,length(s));
-
+    n=length(C);
+    Ps=zeros((n+1),2,length(s));
+%     global P;
+    P=zeros(2,length(s)*(n+1));
+    
     figure(1);
 
     mycolor='mbc';
@@ -51,18 +53,18 @@ function BsplineSE_ATH(C,Aths,Athe,L,Tel)
          'Color', mycolor(mod(i,3)+1), ...
          'LineWidth', 2, ...
          'DisplayName', sprintf('第%d段B样条', i+1));
+     
+         P = [P, [squeeze(Ps(i+1,1,:))'; squeeze(Ps(i+1,2,:))']];
     end
 
+    
+    
     xlabel('X','FontSize',20);
     ylabel('Y','FontSize',20);
-%     xlim([min(Cn(1,:))-0.2 max(Cn(1,:))+0.2]);
-%     ylim([min(Cn(2,:))-0.2 max(Cn(2,:))+0.2]);
     xlim([-4 7]);
     ylim([-4 5]);
     axis manual;  % 防止自动调整
     title(sprintf('%s', Tel))
-    %legend('show', 'Location', 'best');
-%     axis equal;
     grid on
     hold off
 end

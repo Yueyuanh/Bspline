@@ -17,6 +17,7 @@ for a=0.5:0.25:2
     for i=0:pi/36:2*pi
         Aths=[a+(i/2*pi*0.025);i];
         Athe=[1;0];
-        BsplineSE_ATH(C,Aths,Athe,L,sprintf('起始速度（%.2f，%.2f）三次B样条',a+(i/2*pi*0.025),i));
+        ps=BsplineSE_ATH(C,Aths,Athe,L,sprintf('起始速度（%.2f，%.2f）三次B样条',a+(i/2*pi*0.025),i));
+        disp(dps)
     end
 end
